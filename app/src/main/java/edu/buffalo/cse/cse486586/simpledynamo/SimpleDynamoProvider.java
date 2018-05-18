@@ -335,7 +335,7 @@ public class SimpleDynamoProvider extends ContentProvider {
 
 
 	@Override
-	public Uri insert(Uri uri, ContentValues contentValues) {
+	public synchronized Uri insert(Uri uri, ContentValues contentValues) {
 		// TODO Auto-generated method stub
 		Log.d(TAG,"inside insert");
 
@@ -376,7 +376,7 @@ public class SimpleDynamoProvider extends ContentProvider {
 
 
 	@Override
-	public Cursor query(Uri uri, String[] projection, String selection,
+	public synchronized Cursor query(Uri uri, String[] projection, String selection,
 						String[] selectionArgs, String sortOrder) {
 		// TODO Auto-generated method stub
 		Log.d("Query","inside query with query: "+selection);
